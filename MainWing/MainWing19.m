@@ -1,44 +1,41 @@
-%%Ће—ѓ‹у—НђЭЊvѓvѓЌѓOѓ‰ѓЂ 2019”NЋ·Ќs‘г‹у—НЌЎ€д‹H‰·
-%{
-2015,2016”NЋ·Ќs‘г‹у—НђЭЊvЋТа_“cђ№Ћi‚і‚с‚Єђ»Ќм‚µ‚ЅMainEruba.m‚Ж2017”NЋ·Ќs‘г‹у—НђЭЊvЋТ–Ш‰є—Y‰о‚і‚с
-‚Єђ»Ќм‚µ‚ЅDaidalousMain.m‚рЋQЌl‚ЙЌм‚Б‚Д‚ў‚Ь‚·ЃB
-%}
-%ѓeЃ[ѓpЃ[•ПЌX“_‚ЖЊ…•ЄЉ„“_‚Н0.025m‚М”{ђ”‚Й‚И‚й‚ж‚¤‚Й‚µ‚Д‚­‚ѕ‚і‚ўЃB
+%%дё»зїјз©єеЉ›иЁ­иЁ€гѓ—гѓ­г‚°гѓ©гѓ  2019е№ґеџ·иЎЊд»Јз©єеЉ›д»Љдє•зЁЂжё©
 
-% tc?=ѓeЃ[ѓpЃ[•ПЌX“_(m)
+%гѓ†гѓјгѓ‘гѓје¤‰ж›ґз‚№гЃЁжЎЃе€†е‰Із‚№гЃЇ0.025mгЃ®еЂЌж•°гЃ«гЃЄг‚‹г‚€гЃ†гЃ«гЃ—гЃ¦гЃЏгЃ гЃ•гЃ„гЂ‚
+
+% tc?=гѓ†гѓјгѓ‘гѓје¤‰ж›ґз‚№(m)
 tc1=1.75;
 tc2=4.75;
 tc3=7.75; 
 tc4=10.75;
 tc5=13.75;
 tc6=13.775;
-%—ѓSPAN(m)([1”Ф—ѓ,2”Ф—ѓ,3”Ф—ѓ,4”Ф—ѓ,5”Ф—ѓ,6”Ф—ѓ])
+%зїјSPAN(m)([1з•Єзїј,2з•Єзїј,3з•Єзїј,4з•Єзїј,5з•Єзїј,6з•Єзїј])
 sp = [1.75 4.75 7.75 10.75 13.75 13.775];
-%Њ…ѓXѓpѓ“(m)
+%жЎЃг‚№гѓ‘гѓі(m)
 beamsp = [1.75 4.75 7.75 10.75 13.0 13.75 13.775];
-% ‚k=—ѓ•ќ(m)
+% пј¬=зїје№…(m)
 L = sp(1,6);
-WD0 = 8;%—ѓ’[‚Ѕ‚н‚ЭЉp(Џг”ЅЉp)(deg)
-thetaC = 0/180*pi;%“r’†Џг”ЅЉp
+WD0 = 8;%зїјз«ЇгЃџг‚ЏгЃїи§’(дёЉеЏЌи§’)(deg)
+thetaC = 0/180*pi;%йЂ”дё­дёЉеЏЌи§’
 WD = 8/180*pi;%(rad)
-W0 = 51;%ѓpѓCѓЌѓbѓgЏd—К(kgЏd)
-W1 = 42;%‹@‘МЏd—К(kgЏd)
-W = W0+W1;%‘ЌЏd—К(kgЏd)
-%Џd—Н‰Б‘¬“x(m/s^2)
+W0 = 51;%гѓ‘г‚¤гѓ­гѓѓгѓ€й‡Ќй‡Џ(kgй‡Ќ)
+W1 = 42;%ж©џдЅ“й‡Ќй‡Џ(kgй‡Ќ)
+W = W0+W1;%з·Џй‡Ќй‡Џ(kgй‡Ќ)
+%й‡ЌеЉ›еЉ йЂџеє¦(m/s^2)
 g = 9.797;
 
 
 
 %----------------------------------%
-% number=•ЄЉ„”ФЌ†
+% number=е€†е‰Із•ЄеЏ·
 number = 1 : L/0.025;
-%—ѓ•ЄЉ„ђ”
+%зїје€†е‰Іж•°
 npartition = round(L/0.025);
-%•ЄЉ„ЉоЏЂ’·‚і
+%е€†е‰Іеџєжє–й•·гЃ•
 nd = sp(1,6)/npartition;
-%ѓeЃ[ѓpЃ[•ПЌX“_ЃAЊ…•ЄЉ„“_‚М•ЄЉ„“_”ФЌ†
+%гѓ†гѓјгѓ‘гѓје¤‰ж›ґз‚№гЂЃжЎЃе€†е‰Із‚№гЃ®е€†е‰Із‚№з•ЄеЏ·
 [q1,q2,q3,q4,q5,q6,q11,q22,q33,q44,q55,q66,q77] = numbering(tc1,tc2,tc3,tc4,tc5,tc6,beamsp);
-%•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+%е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
 x = zeros(1,npartition);
 for i = 1:npartition
     if i <= q33 
@@ -57,10 +54,10 @@ end
 
 
 
-%ЊvЋZ•Пђ”----------------------------------------
-% codemax=ЌЕ‘е—ѓЊ·’·(m)
+%иЁ€з®—е¤‰ж•°----------------------------------------
+% codemax=жњЂе¤§зїјеј¦й•·(m)
 codemax=1.045;
-%—ѓЊ·’·(ѓeЃ[ѓpЃ[“_Ѓj
+%зїјеј¦й•·(гѓ†гѓјгѓ‘гѓјз‚№пј‰
 chord0 = codemax;
 chord1 = 1.04;
 chord2 = 0.968;
@@ -69,14 +66,14 @@ chord4 = 0.786;
 chord5 = 0.631;
 chord6 = 0.625;
 
-%V=‹@‘М‘¬“x(m/s)
+%V=ж©џдЅ“йЂџеє¦(m/s)
 U = 7.2;
 
-% ’Јђь“ь—Н’l[ђ‚’ј•ыЊь‰ЧЏd(N) Ћж‚и•t‚Ї€К’u(number)]
+% ејµз·ље…ҐеЉ›еЂ¤[ећ‚з›ґж–№еђ‘иЌ·й‡Ќ(N) еЏ–г‚Љд»гЃ‘дЅЌзЅ®(number)]
 WW = [200 336];
 
-%alpha=ђЭ’иЊ}Љp(Ѓ‹Ѓj
-alpham = 4.5;%’†‰›Њ}Љp
+%alpha=иЁ­е®љиїЋи§’(В°пј‰
+alpham = 4.5;%дё­е¤®иїЋи§’
 alpha1 = 4.5;
 alpha2 = 4.5;
 alpha3 = 4.4;
@@ -84,49 +81,49 @@ alpha4 = 4.1;
 alpha5 = 3.6;
 alpha6 = 3.55;
 
-%ЊvЋZ‰сђ”
+%иЁ€з®—е›ћж•°
 N = 100;
-% cr=1ЋЋЌs‚І‚Ж‚Мchord•П‰»—К(m)
+% cr=1и©¦иЎЊгЃ”гЃЁгЃ®chordе¤‰еЊ–й‡Џ(m)
 cr = 0.001;
 %---------------------------------------------------
 
-%nu=“®”Sђ«ЊWђ”(m^2/s)
+%nu=е‹•зІжЂ§дї‚ж•°(m^2/s)
 nu = 1.55*10^(-5);
-%rho=‹у‹C–§“x(kg/m^3)
+%rho=з©єж°—еЇ†еє¦(kg/m^3)
 rho = 1.185;
 
-% count=ЋЋЌs‰сђ”
+% count=и©¦иЎЊе›ћж•°
 count = 1;
 
 
-%Њ…“аЊa(m)([1”ФЊ…ЌЄ,’[,2”ФЊ…ЌЄ,’[,3”ФЊ…ЌЄ,’[,4”ФЊ…ЌЄ,’[,5”ФЊ…ЌЄ,’[,6”ФЌЄ,’[])
+%жЎЃе†…еѕ„(m)([1з•ЄжЎЃж №,з«Ї,2з•ЄжЎЃж №,з«Ї,3з•ЄжЎЃж №,з«Ї,4з•ЄжЎЃж №,з«Ї,5з•ЄжЎЃж №,з«Ї,6з•Єж №,з«Ї])
 beamin = [0.090,0.090,0.090,0.090,0.080,0.080,0.070,0.070,0.060,0.060,0.035,0.035,0.020,0.025];
-%‘wђ”
+%е±¤ж•°
 ply24 = [2 2 2 2 2 2 2 2 1 1 1 1 1 1];
 ply40 = [5 5 5 5 5 5 7 7 6 6 6 6 6 6];
-%Њ…ЉOЊa(m)
+%жЎЃе¤–еѕ„(m)
 beamout = beamin + 0.125*10^(-3)*ply24 + 0.111*10^(-3)*ply40;
 
-%‹ЗЏЉЊ…Џd—К(kg/mm*m/s^2)([1”ФЊ…,2”ФЊ…,3”ФЊ…,4”ФЊ…,5”ФЊ…,6”ФЊ…])
+%е±Ђж‰ЂжЎЃй‡Ќй‡Џ(kg/mm*m/s^2)([1з•ЄжЎЃ,2з•ЄжЎЃ,3з•ЄжЎЃ,4з•ЄжЎЃ,5з•ЄжЎЃ,6з•ЄжЎЃ])
 m0beam = [0.35*10^(-3)*g,0.35*10^(-3)*g,0.3*10^(-3)*g,0.25*10^(-3)*g,0.235*10^(-3)*g,0.19*10^(-3)*g,0.08*10^(-3)*g];
 %{
-—ѓ‚Мђ»Ќм•ы–@‚Й‚ж‚Б‚Д‹ЗЏЉ—ѓЏd—К‚Н•П‚н‚йЃB19‘г‚Н18‘г‚М—ѓ‚рЋQЌl‚Й‹ЗЏЉ—ѓЏd—К‚рЊ€‚Я‚ЅЃB
-18‘г‚М—ѓђ»–@‚Н—ѓ”ЗѓmЃ[ѓg‚рЋQЌl‚Й‚µ‚Д‚­‚ѕ‚і‚ўЃB
+зїјгЃ®иЈЅдЅњж–№жі•гЃ«г‚€гЃЈгЃ¦е±Ђж‰Ђзїјй‡Ќй‡ЏгЃЇе¤‰г‚Џг‚‹гЂ‚19д»ЈгЃЇ18д»ЈгЃ®зїјг‚’еЏ‚иЂѓгЃ«е±Ђж‰Ђзїјй‡Ќй‡Џг‚’ж±єг‚ЃгЃџгЂ‚
+18д»ЈгЃ®зїјиЈЅжі•гЃЇзїјзЏ­гѓЋгѓјгѓ€г‚’еЏ‚иЂѓгЃ«гЃ—гЃ¦гЃЏгЃ гЃ•гЃ„гЂ‚
 %}
-m0wing = [0.75*g 0.7*g 0.7*g 0.65*g 0.5*g 0.4*g,0.3*g];%‹ЗЏЉ—ѓЏd—К(kg/m*m/s^2)
+m0wing = [0.75*g 0.7*g 0.7*g 0.65*g 0.5*g 0.4*g,0.3*g];%е±Ђж‰Ђзїјй‡Ќй‡Џ(kg/m*m/s^2)
 
-%Њ…ѓ„ѓ“ѓO—¦
+%жЎЃгѓ¤гѓіг‚°зЋ‡
 E0 = [104.803*10^9 97.009*10^9 97.009*10^9 117.392*10^9 123.059*10^9 123.059*10^9 123.059*10^9 ];
 
 
 %{
-—ѓ‘f‚Й‚©‚©‚й—Н‚©‚зЊ…‚М‚Ѕ‚н‚Э‚рЊvЋZ‚µ‚Д‚©‚зЃAЏzЉВ‚Є—ѓ‚Й‹y‚Ъ‚·‰e‹ї‚рЊvЋZ‚·‚йЃB
-‚»‚МЊгЌЕ“K‰»‚·‚йЃB
+зїјзґ гЃ«гЃ‹гЃ‹г‚‹еЉ›гЃ‹г‚‰жЎЃгЃ®гЃџг‚ЏгЃїг‚’иЁ€з®—гЃ—гЃ¦гЃ‹г‚‰гЂЃеѕЄз’°гЃЊзїјгЃ«еЏЉгЃјгЃ™еЅ±йџїг‚’иЁ€з®—гЃ™г‚‹гЂ‚
+гЃќгЃ®еѕЊжњЂйЃ©еЊ–гЃ™г‚‹гЂ‚
 %}
 
 n = 0;
 while n <= N
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -143,16 +140,16 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
-    %ѓЊѓCѓmѓ‹ѓYђ”
+    %гѓ¬г‚¤гѓЋгѓ«г‚єж•°
     [Re] = reynolds(U,chord,nu);
-    %—g—НЊXЋО
+    %жЏљеЉ›е‚ѕж–њ
     [original15m,original15mm] = clslope19(Re,codemax,U,nu);
-    %ѓ[ѓЌ—g—НЉp
+    %г‚јгѓ­жЏљеЉ›и§’
     [alpha0015,alpha0015m] = zerolift19(Re,codemax,U,nu);
 
-    %Ћё‘¬‰рђН—pЊ}Љp(“x)
+    %е¤±йЂџи§Јжћђз”ЁиїЋи§’(еє¦)
     alphas = 0;
     alpha = zeros(1,npartition);
     for i = 1:npartition
@@ -173,20 +170,20 @@ while n <= N
     end  
 
 
-    % Њ…‚М‹ЗЏЉЏd—К(kg)
+    % жЎЃгЃ®е±Ђж‰Ђй‡Ќй‡Џ(kg)
     [ty] = mbeam(m0beam,npartition,q1,q2,q3,q4,q5,q6);
-    % —ѓ‚М‹ЗЏЉЏd—К(kg)
+    % зїјгЃ®е±Ђж‰Ђй‡Ќй‡Џ(kg)
     [mw] = mwing19(m0wing,npartition,q1,q2,q3,q4,q5,q6,nd);
-    %Њ…Њa
+    %жЎЃеѕ„
     [bd,bd1,br,br1] = beamd19(beamin,beamsp,npartition,q11,q22,q33,q44,q55,q66,q77,nd);
-    %Њ…ѓ„ѓ“ѓO—¦
+    %жЎЃгѓ¤гѓіг‚°зЋ‡
     [E] = young19(npartition,E0,q11,q22,q33,q44,q55,q66,q77);
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -213,17 +210,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi1 = (sum(D) - sum(dD))/sum(F);
@@ -233,7 +230,7 @@ while n <= N
     %----------------------------
     chord0 = chord0 + cr;
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -250,15 +247,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -285,17 +282,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi2 = (sum(D) - sum(dD))/sum(F);
@@ -312,7 +309,7 @@ while n <= N
         break
     end    
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -329,15 +326,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -364,17 +361,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi3 = (sum(D) - sum(dD))/sum(F);
@@ -392,7 +389,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -409,15 +406,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -444,17 +441,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi4 = (sum(D) - sum(dD))/sum(F);
@@ -471,7 +468,7 @@ while n <= N
         break
     end    
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -488,15 +485,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -523,17 +520,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi5 = (sum(D) - sum(dD))/sum(F);
@@ -550,7 +547,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -567,15 +564,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -602,17 +599,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi6 = (sum(D) - sum(dD))/sum(F);
@@ -629,7 +626,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -646,15 +643,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -681,17 +678,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi7 = (sum(D) - sum(dD))/sum(F);
@@ -708,7 +705,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -725,15 +722,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -760,17 +757,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi8 = (sum(D) - sum(dD))/sum(F);
@@ -787,7 +784,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -804,15 +801,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -839,17 +836,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi9 = (sum(D) - sum(dD))/sum(F);
@@ -866,7 +863,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -883,15 +880,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -918,17 +915,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi10 = (sum(D) - sum(dD))/sum(F);
@@ -945,7 +942,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -962,15 +959,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -997,17 +994,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi11 = (sum(D) - sum(dD))/sum(F);
@@ -1024,7 +1021,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -1041,15 +1038,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -1076,17 +1073,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi12 = (sum(D) - sum(dD))/sum(F);
@@ -1103,7 +1100,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -1120,15 +1117,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -1155,17 +1152,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi13 = (sum(D) - sum(dD))/sum(F);
@@ -1182,7 +1179,7 @@ while n <= N
         break
     end
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -1199,15 +1196,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -1234,17 +1231,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi14 = (sum(D) - sum(dD))/sum(F);
@@ -1257,7 +1254,7 @@ while n <= N
 
     chord6 = chord6 - cr;
 
-    %•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+    %е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
     x = zeros(1,npartition);
     for i = 1:npartition
         if i <= q33 
@@ -1274,15 +1271,15 @@ while n <= N
         end
     end
 
-    % chord=—ѓЊ·’·(m)
+    % chord=зїјеј¦й•·(m)
     [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-    %Џ‰Љъ—g—Н
+    %е€ќжњџжЏљеЉ›
     [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-    %ЌR—Н
+    %жЉ—еЉ›
     [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-    %‚Ѕ‚н‚ЭЊvЋZ
+    %гЃџг‚ЏгЃїиЁ€з®—
 
     [Iz] = areainertia19(bd,bd1);
     [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -1309,17 +1306,17 @@ while n <= N
 
     end
 
-    %—ѓ’†‰›‚МЏzЉВ
+    %зїјдё­е¤®гЃ®еѕЄз’°
     gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-    %ЏzЉВ•Є•zЊvЋZ
+    %еѕЄз’°е€†еёѓиЁ€з®—
     [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-    %ђЃ‚«‰є‚µЊvЋZ
+    %еђ№гЃЌдё‹гЃ—иЁ€з®—
     [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-    %ЏzЉВ•Є•zЌДЊvЋZ
+    %еѕЄз’°е€†еёѓе†ЌиЁ€з®—
     [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-    %‹ЗЏЉ—g—НЌДЊvЋZ
+    %е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
     F = rho*U*gammas.*cos(theta)*nd;
-    %‹ЗЏЉ—U“±ЌR—Н
+    %е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
     dD = rho*downwash.*gammas;
 
     effi15 = (sum(D) - sum(dD))/sum(F);
@@ -1411,7 +1408,7 @@ while n <= N
 
 end
 
-%•ЄЉ„“_‚МЌА•W(—ѓ’†‰›‚М—ѓѓ}ѓEѓ“ѓg‚Єx=0,y=0)
+%е€†е‰Із‚№гЃ®еє§жЁ™(зїјдё­е¤®гЃ®зїјгѓћг‚¦гѓігѓ€гЃЊx=0,y=0)
 x = zeros(1,npartition);
 for i = 1:npartition
     if i <= q33 
@@ -1428,15 +1425,15 @@ for i = 1:npartition
     end
 end
 
-% chord=—ѓЊ·’·(m)
+% chord=зїјеј¦й•·(m)
 [chord]=CHORD19(chord0,chord1,chord2,chord3,chord4,chord5,chord6,q1,q2,q3,q4,q5,q6,npartition);
 
-%Џ‰Љъ—g—Н
+%е€ќжњџжЏљеЉ›
 [F] = Liftfirst19(original15m,chord,alpha,nd,rho,U,npartition,alpha0015);
-%ЌR—Н
+%жЉ—еЉ›
 [drag15,drag15m,D]=drag(Re,codemax,U,nu,alpha,alpham,npartition,chord,rho,nd);
 
-%‚Ѕ‚н‚ЭЊvЋZ
+%гЃџг‚ЏгЃїиЁ€з®—
 
 [Iz] = areainertia19(bd,bd1);
 [M,theta,ty] = momente19(F,npartition,nd,WW,mw,Iz,E,q33,thetaC,y);
@@ -1463,17 +1460,17 @@ for i = q33+1:npartition
 
 end
 
-%—ѓ’†‰›‚МЏzЉВ
+%зїјдё­е¤®гЃ®еѕЄз’°
 gammam = 1/2*original15mm*(alpham-alpha0015m)*U*codemax;
-%ЏzЉВ•Є•zЊvЋZ
+%еѕЄз’°е€†еёѓиЁ€з®—
 [gamma] = gamma19(npartition,original15m,chord,alpha,alpha0015,U);
-%ђЃ‚«‰є‚µЊvЋZ
+%еђ№гЃЌдё‹гЃ—иЁ€з®—
 [X,Y,thetaij,deltagamma,w,downwash] = downwash19(x,y,gamma,theta,gammam,npartition,nd);
-%ЏzЉВ•Є•zЌДЊvЋZ
+%еѕЄз’°е€†еёѓе†ЌиЁ€з®—
 [gammas] = gammas19(npartition,original15m,chord,alpha,alpha0015,U,downwash);
-%‹ЗЏЉ—g—НЌДЊvЋZ
+%е±Ђж‰ЂжЏљеЉ›е†ЌиЁ€з®—
 F = rho*U*gammas.*cos(theta)*nd;
-%‹ЗЏЉ—U“±ЌR—Н
+%е±Ђж‰ЂиЄе°ЋжЉ—еЉ›
 dD = rho*downwash.*gammas;
 
 
